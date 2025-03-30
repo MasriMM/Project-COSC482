@@ -1,8 +1,10 @@
 import requests
 import pandas as pd 
-import apiKey as Key
 
-API_KEY = Key.API_KEY
+import os
+
+API_KEY = os.getenv("API_KEY")
+
 LOCATION = "Beirut"
 # URL = f"https://api.weatherapi.com/v1/forecast.json?key={API_KEY}&q={LOCATION}&day=10"
 # URL = f"https://api.weatherapi.com/v1/future.json?key={API_KEY}&q={LOCATION}&dt=2025-04-"
@@ -26,4 +28,4 @@ for LOCATION in locations:
 # Print the array or convert it to DataFrame
 df = pd.DataFrame(arr)
 print(df)
-df.to_csv("weather.csv", mode='a', index=False, header=False)
+# df.to_csv("weather.csv", mode='a', index=False, header=False)
